@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@test-project/shared-lib';
-import { AppModule } from './app.module.js';
+import { AppModule } from './app.module';
 
 const logger = new Logger('API');
 

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "allowJs": true,
@@ -21,20 +22,14 @@
     "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
+      "@test-project/api": ["./apps/api/src"],
+      "@test-project/api/*": ["./apps/api/src/*"],
       "@test-project/shared-lib": ["./packages/shared-lib/src"],
       "@test-project/shared-lib/*": ["./packages/shared-lib/src/*"]
     }
   },
-  "include": [
-    "packages/**/*",
-    "apps/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ],
+  "include": ["packages/**/*", "apps/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"],
   "references": [
     {
       "path": "./packages/shared-lib"

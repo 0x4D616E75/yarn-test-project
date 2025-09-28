@@ -5,27 +5,27 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+    ".": "./dist/index.js",
+    "./testing": "./src/index.ts"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc --build",
+    "build": "node ./esbuild.build.mjs",
     "clean": "rm -rf dist",
     "dev": "tsc --build --watch",
     "test": "jest"
   },
   "devDependencies": {
-    "@swc/core": "1.13.5",
+    "@swc/core": "1.13.20",
     "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",
-    "@types/node": "^20.0.0",
+    "@types/node": "^20.19.17",
+    "esbuild": "^0.25.10",
+    "esbuild-plugin-swc": "^1.0.1",
     "jest": "^30.2.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=18.0.0"

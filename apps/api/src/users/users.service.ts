@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Logger, formatUserName, isValidEmail } from '@test-project/shared-lib';
-import type { CreateUserDto, UpdateUserDto } from './dto/user.dto.js';
+import type { CreateUserDto, UpdateUserDto } from './dto/user.dto';
 
 export interface User {
   id: number;

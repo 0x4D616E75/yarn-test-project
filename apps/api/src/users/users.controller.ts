@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Put, Delete, HttpCode, HttpStatus } from '@nestjs/common';
-import { UsersService } from './users.service.js';
-import type { CreateUserDto, UpdateUserDto } from './dto/user.dto.js';
+import { UsersService } from './users.service';
+import type { CreateUserDto, UpdateUserDto } from './dto/user.dto';
 import { createApiResponse, type ApiResponse } from '@test-project/shared-lib';
 
 @Controller('users')

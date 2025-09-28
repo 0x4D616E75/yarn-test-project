@@ -13,16 +13,31 @@
     "dev": "yarn workspace @test-project/api run dev",
     "start": "yarn workspace @test-project/api run start",
     "test": "yarn workspaces foreach -A run test",
+    "test:e2e": "jest -c jest.e2e.config.cjs",
+    "test:all": "yarn test && yarn test:e2e",
     "clean": "yarn workspaces foreach -A run clean"
   },
   "devDependencies": {
-    "@swc/core": "1.13.5",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "@nestjs/testing": "^11.1.6",
+    "@swc/core": "1.13.20",
     "@swc/jest": "^0.2.39",
+    "@test-project/api": "workspace:*",
     "@types/jest": "^30.0.0",
-    "@types/node": "^20.0.0",
+    "@types/node": "^20.19.17",
+    "@types/supertest": "^6.0.3",
+    "esbuild": "^0.25.10",
+    "esbuild-plugin-swc": "^1.0.1",
     "jest": "^30.2.0",
-    "ts-jest": "^29.4.4",
-    "typescript": "^5.0.0"
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "supertest": "^7.1.4",
+    "typescript": "^5.9.2"
+  },
+  "resolutions": {
+    "@swc/core": "1.13.19"
   },
   "engines": {
     "node": ">=18.0.0"
