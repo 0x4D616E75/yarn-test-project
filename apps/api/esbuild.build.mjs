@@ -1,5 +1,5 @@
 import { build } from 'esbuild';
-import swc from 'esbuild-plugin-swc';
+import { swcPlugin } from 'esbuild-plugin-swc';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
@@ -20,7 +20,7 @@ const common = {
   packages: 'external',
   metafile: true,
   plugins: [
-    swc({
+    swcPlugin({
       jsc: {
         target: 'es2022',
         parser: { syntax: 'typescript', decorators: true },

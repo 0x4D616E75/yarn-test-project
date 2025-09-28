@@ -1,5 +1,5 @@
 import { build } from "esbuild";
-import swc from "esbuild-plugin-swc";
+import { swcPlugin } from "esbuild-plugin-swc";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,7 +18,7 @@ await build({
   bundle: true, // bei kleinen Libs angenehm → eine Datei, keine Relativimporte
   packages: "external", // lässt deps extern; hier meistens ok
   plugins: [
-    swc({
+    swcPlugin({
       jsc: {
         target: "es2022",
         parser: { syntax: "typescript", decorators: true },
