@@ -17,10 +17,14 @@
     "build": "tsc --build",
     "clean": "rm -rf dist",
     "dev": "tsc --build --watch",
-    "test": "echo 'No tests specified'"
+    "test": "jest"
   },
   "devDependencies": {
+    "@swc/core": "1.13.5",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
+    "jest": "^30.2.0",
     "typescript": "^5.0.0"
   },
   "engines": {
