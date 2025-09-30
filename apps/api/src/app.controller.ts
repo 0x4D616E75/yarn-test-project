@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { AppService } from './app.service';
 import { createApiResponse, type ApiResponse } from '@test-project/shared-lib';
 
@@ -19,5 +19,10 @@ export class AppController {
       timestamp: new Date(),
     };
     return createApiResponse(true, healthData);
+  }
+
+  @Get('notfound')
+  getNotfound(): ApiResponse<{ status: string; timestamp: Date }> {
+    throw new NotFoundException();
   }
 }

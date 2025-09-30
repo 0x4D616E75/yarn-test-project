@@ -34,6 +34,11 @@ describe("E2E: /health (optional)", () => {
     });
     expect(new Date(res.body.timestamp).toString()).not.toBe("Invalid Date");
   });
+
+  it("GET /notfound -> 404", async () => {
+    const res = await request(app.getHttpServer()).get("/notfound");
+    expect(res.status).toBe(404);
+  });
 });
 
 describe("E2E: /users", () => {
